@@ -1,31 +1,31 @@
-# IceDamFailures
+# Ice-Dam Failures
 
+This repository contains XXX scripts to analyse trends in the magnitude, timing, and source elevation of ice-dam failures on regional and local (i.e. lake-level) scale. 
 
-This repository contains scripts to analyse trends in the magnitude, timing, and source elevation of ice-dam failures on regional and local scale. 
-We split our statistical analysis into four chunks.
-
-1) We
-1) We analyse trends in median and extreme flood discharges and volumes
-
-one that preprocesses a raw data table of reported GLOFs ([preprocessing.R](#preprocessingr)), and a second one ([assessing_bias.R](#assessing_biasr)) that  
-- estimates temporal and regional trends in reported GLOFs; 
-- estimates GLOF trends from the predictors 'annual air temperatures' and 'research activity'; and
-- hind- and forecasts annual GLOF counts, based on these two predictors.
+- 01_lake_area_volume.R
+- 02_quantile_regression.R
+- 03_local_trends_in_V0_and_Qp.R
+- 04_trends_in_doy.R
+- XXX.R
+- XXX.R
+- 07_magnitudes_vs_elev_change.R
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.0.0, and called within
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
-To successfully run the codes, please install both **R and RStudio** on your machine.
+Please install both **R and RStudio** on your machine to successfully run the codes and produce figures and R data objects.
 
-The R codes also depend on a number of packages, listed at the beginning of both scripts. 
-Please install those before running the codes. 
+The R codes also depend on a number of packages, listed at the beginning of both scripts. Please install those packages before running the codes. 
 The comments within the scripts provide further details on model dependencies and usage of functions. 
 
+Each script will call one or more input data object(s), which will be made available via Zenodo soon. 
+Please put all Input files into the same folder.
+The Zenodo folder also contains the results of each script, which you can use to compare with the results of your own analysis.
 
 ## Scripts
 
-### preprocessing.R
+### 01_lake_area_volume.R
 
-Preparation script to obtain annual statistics of
+Script to predict glacier lake volume from glacier lake area, aka the volume-area relationship
 
 - GLOF counts by dam type;
 - glaciological research activity;
