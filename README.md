@@ -37,7 +37,7 @@ regression model that objectively learns the location of breakpoint in the empir
 *Output*: 
 - "va_breakpoint.pdf" / "va_breakpoint.png" (Plot of the piece-wise regression model)
 - "va_model.RDS" (R-object of the fitted volume-area-relationship using the package mcp)
-
+---
 
 ### 02_quantile_regression.R
 
@@ -53,7 +53,7 @@ from ice-dam failures in six mountain ranges.**
 - "qp_regional_quantreg_posteriors.RDS" (R-object of the posterior predictive distribution of V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles for each year in the period 1900-2021)
 - "qp_regional_quantreg_trends.RDS" (R-object of posterior trends in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
 - "qp_regional_medline.RDS" (R-object of median temporal change in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
-
+---
 
 ### 03_local_trends_in_V0_and_Qp.R
 
@@ -78,7 +78,7 @@ GLOF peak discharge Q<sub>p</sub>
 - "regression_Qp_per_lake.pdf" / "regression_Qp_per_lake.png" (Plot of the posterior trends in Q<sub>p</sub> for each lake)
 - "post_trend_Qp_per_lake.pdf" / "post_trend_Qp_per_lake.png" (Plot of the posterior regression slope of Q<sub>p</sub> versus time)
 - "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
-
+---
 
 ### 04_trends_in_doy.R
 
@@ -93,21 +93,27 @@ GLOF peak discharge Q<sub>p</sub>
 - "doy_trends_per_glacier.RDS"  (R-object with regression models of *doy* versus time for lakes with repeat GLOFs)
 - "regression_doy_per_lake.pdf" / "regression_doy_per_lake.png" (Plot of local changes in *doy* versus time)
 - "post_trend_doy_per_lake.pdf" / "post_trend_doy_per_lake.png" (Plot of local  posterior differences in *doy* for each lake)
+---
 
 ### 05_XXX.R
 
-
 *Description TBA*
+
 *Mandatory input data*: TBA
+
 *Output*: TBA
 
+---
 
 ### 06_XXX.R
 
 *Description TBA*
+
 *Mandatory input data*: TBA
+
 *Output*: TBA
 
+---
 
 ### 07_magnitudes_vs_elev_change.R
 
@@ -123,7 +129,7 @@ GLOF peak discharge Q<sub>p</sub>
 *Output*: 
 
 - "map_and_trends.pdf" (Map of lakes with repeat GLOFs between 2000 and 2019; local trends of V0 and Qp with cumulative changes in glacier dam elevation)
-
+---
 
 ## Input data
 
@@ -140,9 +146,9 @@ http://glofs.geoecology.uni-potsdam.de
 
 ## Contact
 
-**Georg Veh**
-Working group on natural hazards
-University of Potsdam
-georg.veh@uni-potsdam.de
+**Georg Veh**  
+Working group on natural hazards  
+University of Potsdam  
+georg.veh@uni-potsdam.de  
 
 https://www.uni-potsdam.de/de/umwelt/forschung/ag-naturgefahren.html
