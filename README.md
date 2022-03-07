@@ -1,8 +1,8 @@
-# Ice-Dam Failures
+# Changes in ice-dam failures with ongoing glacier decay
 
 ## Overview
 
-**This repository contains **XXX scripts** to analyse trends in the GLOF volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-level) scale.**
+**This repository contains seven scripts to identify trends in the GLOF volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-level) scale. Furthermore, we investigate the consequences of melting glacier dams on the magnitudes of GLOFs**
 
 - 01_lake_area_volume.R
 - 02_quantile_regression.R
