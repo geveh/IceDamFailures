@@ -1,5 +1,7 @@
 # Ice-Dam Failures
 
+## Overview
+
 This repository contains **XXX scripts** to analyse trends in the GLOF volume V<sub>0</sub>, Q<sub>p</sub>, timing, and source elevation of ice-dam failures on regional and local (i.e. lake-level) scale. 
 
 - 01_lake_area_volume.R
@@ -37,29 +39,45 @@ regression model that objectively learns the location of breakpoint in the empir
 - "va_model.RDS" (R-object of the fitted volume-area-relationship using the package mcp)
 
 
-
 ### 02_quantile_regression.R
 
 Script to fit quantile regression models (50th and 90th percentile) of peak discharges and volumes versus time 
 from ice-dam failures in six mountain ranges. 
 
 *Mandatory input data*: 
-- 
+- "Global_GLOF_database_2021_12_08.ods" (table with all reported GLOFs according to the Global GLOF database)
 
 *Output*: 
-- "all_glofs_tibble.RDS" (R-object with a preprocessed table of reported GLOFs)
-- "qp_regional_quantreg_fits.RDS" ()
-- "qp_regional_quantreg_posteriors.RDS" (R-object of the posterior predictive distribution of GLOF volume and discharge for each region and both percentiles for each year in the period 1900-2021)
-- "qp_regional_quantreg_trends.RDS" (R-object of posterior trends in GLOF volume and discharge for each region and both percentiles)
-- "qp_regional_medline.RDS" (R-object of median temporal change in GLOF volume and discharge for each region and both percentiles)
+- "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
+- "qp_regional_quantreg_fits.RDS" (R-object with a quantile regression model of V<sub>0</sub> and Q<sub>p</sub> versus time for the 50th and 90th percentile for each region)
+- "qp_regional_quantreg_posteriors.RDS" (R-object of the posterior predictive distribution of V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles for each year in the period 1900-2021)
+- "qp_regional_quantreg_trends.RDS" (R-object of posterior trends in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
+- "qp_regional_medline.RDS" (R-object of median temporal change in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
 
 
 ### 03_local_trends_in_V0_and_Qp.R
 
-Script to estimate trends in flood volume and peak discharge for individual ice-dammed lakes with repeat outburst. 
+Script to estimate trends in V<sub>0</sub> and Q<sub>p</sub> for individual ice-dammed lakes with repeat outburst. 
 
 *Mandatory input data*: 
+- "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
+- "va_model.RDS" (R-object of the fitted volume-area-relationship. Will be used to make new predictions of lake volume from mapped lake area)
+
 *Output*: 
+
+GLOF volume  V<sub>0</sub>
+- "all_glofs_V0_tibble.RDS" (Table of lakes with repeat GLOFs and reported V<sub>0</sub>)
+- "local_V0_model.RDS" (Hierarchical regression model of V<sub>0</sub> versus time for individual glacier lakes)
+- "regression_V0_per_lake.pdf" / "regression_V0_per_lake.png" (Plot of the posterior trends in V<sub>0</sub> for each lake)
+- "post_trend_V0_per_lake.pdf" / "post_trend_V0_per_lake.png" (Plot of the posterior regression slope of V<sub>0</sub> versus time)
+- "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
+
+GLOF peak discharge Q<sub>p</sub>
+- "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
+- "local_qp_model.RDS" (Hierarchical regression model of Q<sub>0</sub> versus time for individual glacier lakes)
+- "regression_Qp_per_lake.pdf" / "regression_Qp_per_lake.png" (Plot of the posterior trends in Q<sub>p</sub> for each lake)
+- "post_trend_Qp_per_lake.pdf" / "post_trend_Qp_per_lake.png" (Plot of the posterior regression slope of Q<sub>p</sub> versus time)
+- "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
 
 
 ### 04_trends_in_doy.R
