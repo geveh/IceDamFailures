@@ -1,13 +1,13 @@
 # Ice-Dam Failures
 
-This repository contains XXX scripts to analyse trends in the magnitude, timing, and source elevation of ice-dam failures on regional and local (i.e. lake-level) scale. 
+This repository contains **XXX scripts** to analyse trends in the GLOF volume V<sub>0</sub>, Q<sub>p</sub>, timing, and source elevation of ice-dam failures on regional and local (i.e. lake-level) scale. 
 
 - 01_lake_area_volume.R
 - 02_quantile_regression.R
 - 03_local_trends_in_V0_and_Qp.R
 - 04_trends_in_doy.R
-- XXX.R
-- XXX.R
+- 05_XXX.R
+- 06_XXX.R
 - 07_magnitudes_vs_elev_change.R
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.0.0, and called within
@@ -25,26 +25,70 @@ The Zenodo folder also contains the results of each script, which you can use to
 
 ### 01_lake_area_volume.R
 
-Script to predict glacier lake volume from glacier lake area, aka the volume-area relationship
+Script to predict glacier lake volume from glacier lake area. We use a Bayesian piece-wise
+regression model that objectively learns the location of breakpoint in the empirical relationship between lake volume and lake area.
 
-- GLOF counts by dam type;
-- glaciological research activity;
-- temperature; and
-- precipitation
+*Mandatory input data*: 
+- "Global_GLOF_database_2021_12_08.ods" (table with all reported GLOFs according to the Global GLOF database)
+- "lake_area_volume_compiliaton.xlsx" (table with previously reported data pairs of volume and area of glacier lakes)
 
-from the original Open-Office spreadsheet 'Global_GLOF_database_2021_06_09.ods', available at this page (see a detailed description in the section on [Input data](#global_glof_database_2021_06_09ods)).
-The script produces the R-Data object *regional_glof_stats.rds*, which is already available on this page.
+*Output*: 
+- "va_breakpoint.pdf" / "va_breakpoint.png" (Plot of the piece-wise regression model)
+- "va_model.RDS" (R-object of the fitted volume-area-relationship using the package mcp)
 
-### assessing_bias.R
 
-Main script to 
 
-- find change points in time series of reported GLOFs, air temperatures, and glacier surveys;
-- estimate trends in GLOF reporting for each study region and dam type;
-- predict annual GLOF counts from air temperatures and the number of glacier surveys;
-- to hind- and forecast the number of GLOFs before and after the global break in GLOF reporting.
-- reproduce all figures in the manuscript.
+### 02_quantile_regression.R
 
+Script to fit quantile regression models (50th and 90th percentile) of peak discharges and volumes versus time 
+from ice-dam failures in six mountain ranges. 
+
+*Mandatory input data*: 
+- 
+
+*Output*: 
+- "all_glofs_tibble.RDS" (R-object with a preprocessed table of reported GLOFs)
+- "qp_regional_quantreg_fits.RDS" ()
+- "qp_regional_quantreg_posteriors.RDS" (R-object of the posterior predictive distribution of GLOF volume and discharge for each region and both percentiles for each year in the period 1900-2021)
+- "qp_regional_quantreg_trends.RDS" (R-object of posterior trends in GLOF volume and discharge for each region and both percentiles)
+- "qp_regional_medline.RDS" (R-object of median temporal change in GLOF volume and discharge for each region and both percentiles)
+
+
+### 03_local_trends_in_V0_and_Qp.R
+
+Script to estimate trends in flood volume and peak discharge for individual ice-dammed lakes with repeat outburst. 
+
+*Mandatory input data*: 
+*Output*: 
+
+
+### 04_trends_in_doy.R
+
+Script to estimate trends in the annual timing (i.e. day in a given year) of ice-dam failures on regional and local scale.
+
+*Mandatory input data*: 
+*Output*: 
+
+
+### 05_XXX.R
+
+
+*Description TBA*
+*Mandatory input data*: TBA
+*Output*: TBA
+
+
+### 06_XXX.R
+
+*Description TBA*
+*Mandatory input data*: TBA
+*Output*: TBA
+
+
+### 07_magnitudes_vs_elev_change.R
+
+*Mandatory input data*: 
+*Output*: 
 
 
 
