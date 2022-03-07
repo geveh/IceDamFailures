@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **XXX scripts** to analyse trends in the GLOF volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>, timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-level) scale. 
+This repository contains **XXX scripts** to analyse trends in the GLOF volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-level) scale. 
 
 - 01_lake_area_volume.R
 - 02_quantile_regression.R
@@ -85,8 +85,14 @@ GLOF peak discharge Q<sub>p</sub>
 Script to estimate trends in the annual timing (i.e. day in a given year) of ice-dam failures on regional and local scale.
 
 *Mandatory input data*: 
-*Output*: 
+- "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
 
+*Output*: 
+- "doy_trends_per_region.RDS" (R-object with regression models of *doy* versus time for all dated GLOFs in the six regions).
+- "doy_change.pdf" / "doy_change.png" (Plot of the temporal trends in *doy* for each region, including the posterior differences in *doy* between 2021 and 1900)
+- "doy_trends_per_glacier.RDS"  (R-object with regression models of *doy* versus time for lakes with repeat GLOFs)
+- "regression_doy_per_lake.pdf" / "regression_doy_per_lake.png" (Plot of local changes in *doy* versus time)
+- "post_trend_doy_per_lake.pdf" / "post_trend_doy_per_lake.png" (Plot of local  posterior differences in *doy* for each lake)
 
 ### 05_XXX.R
 
