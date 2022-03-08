@@ -16,12 +16,13 @@ The codes are written in the statistical programming language **R** (https://www
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
 Please install both **R and RStudio** on your machine to successfully run the codes and produce figures and R data objects.
 
-The R codes also depend on a number of packages, listed at the beginning of both scripts. Please install those packages before running the codes. 
+The R codes depend on a number of packages, listed at the beginning of all scripts. Please install those packages before running the scripts. 
 The comments within the scripts provide further details on model dependencies and usage of functions. 
 
-Each script will call one or more input data object(s), which will be made available via Zenodo soon. 
+Each script will call one or more input data object(s), which will be made available **via Zenodo soon**. 
 Please put all input files into the same folder. The scripts can be executed one after the other, with the user generating output that is used as input for the next script.
 The scripts (and parts thereof) can also be run independent of each other using the input files from Zenodo.
+Each script will produce output in form of a figure (displayed in the associate manuscript and supplementary figures) or R-objects.
 
 ## Scripts
 
