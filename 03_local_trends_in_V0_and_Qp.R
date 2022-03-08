@@ -173,7 +173,7 @@ trend.v0  <- brm(bf(V0_scale ~ year_scale + ( year_scale | Glacier_and_lake)),
                  control = list(adapt_delta = 0.94,
                                 max_treedepth = 15))
 
-# Write the hierarchical model V0 model to disk.
+# Write the hierarchical model of local changes in V0 versus time to disk.
 
 saveRDS(trend.v0, "local_V0_model.RDS")
 # trend.V0 <- readRDS("local_V0_model.RDS")
@@ -404,9 +404,10 @@ trend.qp  <- brm(bf(qp_scale ~ year_scale + ( year_scale | Glacier_and_lake)),
                  control = list(adapt_delta = 0.94,
                                 max_treedepth = 12))
 
-# Write the hierarchical model Qp model to disk.
+# Write the hierarchical model of local changes in V0 versus time to disk.
 
 saveRDS(trend.qp, "local_qp_model.RDS")
+# trend.qp <- readRDS("local_qp_model.RDS")
 
 # Assess model parameters, check for divergences, and do posterior predictive checks.
 
