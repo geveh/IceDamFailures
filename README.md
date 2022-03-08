@@ -122,14 +122,16 @@ GLOF peak discharge Q<sub>p</sub>
 
 *Mandatory input data*: 
 
-- Folder "dh_pergla_cut" (tables of cumulative elevation change (in m) for glaciers with repeat GLOFs between 2000 and 2019)
+- Folder "dh_pergla_cut" (Tables of cumulative elevation change (in m) for glaciers with repeat GLOFs between 2000 and 2019)
 - "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
 - "all_glofs_V0_tibble.RDS" (Table of lakes with repeat GLOFs and reported V<sub>0</sub>)
 - "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
+- Folder "Region_extents" (Contains the ESRI shapefile *Extent_pol.shp* to display the extent of the study regions)
 
 *Output*: 
 
 - "map_and_trends.pdf" (Map of lakes with repeat GLOFs between 2000 and 2019; local trends of V<sub>0</sub> and Q<sub>p</sub> with cumulative changes in glacier dam elevation)
+- "dam_thinning_rats.shp" (ESRI shapefile showing mean annual elevation change of glacier dams with repeat outbursts between 2000 and 2019.
 ---
 
 ## Input data
