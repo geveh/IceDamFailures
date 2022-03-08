@@ -153,7 +153,8 @@ http://glofs.geoecology.uni-potsdam.de
 ## Contact
 
 **Georg Veh**  
-Working group on natural hazards  
+Postdoctoral researcher in the working group on natural hazards  
+Institute of Environmental Sciences and Geography  
 University of Potsdam  
 georg.veh@uni-potsdam.de  
 https://www.uni-potsdam.de/de/umwelt/forschung/ag-naturgefahren.html
