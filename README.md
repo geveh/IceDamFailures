@@ -42,7 +42,7 @@ regression model that objectively learns the location of a breakpoint in the emp
 
 ### 02_quantile_regression.R
 
-**Script to fit quantile regression models (50th and 90th percentile) of peak discharges and volumes versus time 
+**Script to fit quantile regression models (50th and 90th percentile) of peak discharges *Q*<sub>p</sub> and volumes *V*<sub>0</sub> versus time 
 from ice-dam failures in six mountain ranges.**
 
 *Mandatory input data*: 
