@@ -28,7 +28,7 @@ Each script will produce output in form of a figure (displayed in the associate 
 
 ### 01_lake_area_volume.R
 
-**Script to predict glacier lake volume from glacier lake area. We use a Bayesian piece-wise
+**Script to predict glacier lake volume *V* from glacier lake area *A*. We use a Bayesian piece-wise
 regression model that objectively learns the location of a breakpoint in the empirical relationship between lake volume and lake area.**
 
 *Mandatory input data*: 
@@ -36,7 +36,7 @@ regression model that objectively learns the location of a breakpoint in the emp
 - "lake_area_volume_compiliaton.xlsx" (table with previously reported data pairs of volume and area of glacier lakes)
 
 *Output*: 
-- "va_breakpoint.pdf" / "va_breakpoint.png" (Plot of the piece-wise regression model)
+- "va_breakpoint.pdf" / "va_breakpoint.png" (Plot of the piece-wise *V-A* regression model)
 - "va_model.RDS" (R-object of the fitted volume-area-relationship using the package mcp)
 ---
 
