@@ -96,18 +96,19 @@ GLOF peak discharge Q<sub>p</sub>
 - "post_trend_doy_per_lake.pdf" / "post_trend_doy_per_lake.png" (Plot of local  posterior differences in *doy* for each lake)
 ---
 
-### 05_glacier_volumes_and_ice_loss
+### 05_glacier_volumes_and_ice_loss.R
 
 **Script to obtain the total volumes of glaciers and their volume loss between 2000 and 2019 in 100-m elevation bins.**
 
-*Mandatory input data*: 
+*Mandatory input data (Data sources from external repositories are provided in the script)*: 
 - Folder "Region_extents" (Contains the ESRI shapefile *Extent_pol.shp* to display the extent of the study regions)
 - Glacier outlines from the Randolph Glacier Inventory (RGI)
 - Glacier surface DEMs from Farinotti et al. (2019)
 - Glacier volume DEMs from Farinotti et al. (2019)
 - Glacier elevation change data from Hugonnet et al. (2021)
 
-*Output*: TBA
+*Output*: 
+- "Regional_glacier_and_melt_volumes.rds" (R-object containing the total volume of glacier volume and volume change between 2000 and 2019 in 100-m elevation bins)
 
 ---
 
