@@ -66,7 +66,7 @@ from ice-dam failures in six mountain ranges.**
 
 *Output*: 
 
-GLOF volume  V<sub>0</sub>
+GLOF volume V<sub>0</sub>
 - "all_glofs_V0_tibble.RDS" (Table of lakes with repeat GLOFs and reported V<sub>0</sub>)
 - "local_V0_model.RDS" (Hierarchical regression model of V<sub>0</sub> versus time for individual glacier lakes)
 - "regression_V0_per_lake.pdf" / "regression_V0_per_lake.png" (Plot of the posterior trends in V<sub>0</sub> for each lake)
@@ -89,7 +89,7 @@ GLOF peak discharge Q<sub>p</sub>
 - "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
 
 *Output*: 
-- "doy_trends_per_region.RDS" (R-object with regression models of *doy* versus time for all dated GLOFs in the six regions).
+- "doy_trends_per_region.RDS" (R-object with regression models of *doy* versus time for all dated GLOFs in the six regions)
 - "doy_change.pdf" / "doy_change.png" (Plot of the temporal trends in *doy* for each region, including the posterior differences in *doy* between 2021 and 1900)
 - "doy_trends_per_glacier.RDS"  (R-object with regression models of *doy* versus time for lakes with repeat GLOFs)
 - "regression_doy_per_lake.pdf" / "regression_doy_per_lake.png" (Plot of local changes in *doy* versus time)
@@ -112,13 +112,19 @@ GLOF peak discharge Q<sub>p</sub>
 
 ---
 
-### 06_XXX.R
+### 06_trends_in_Z.R
 
-*Description TBA*
+**Script to estimate regional trends in the source elevation (*Z*) of ice-dammed failures**
 
-*Mandatory input data*: TBA
+*Mandatory input data*: 
+- Digital Elevation models from ALOS World 3D - 30m (AW3D30)
+- Folder "GDL_database" (Regional inventories of ice-dammed lakes in ESRI shapefile format)
+- "Regional_glacier_and_melt_volumes.rds" (R-object containing the total volume of glacier volume and volume change between 2000 and 2019 in 100-m elevation bins)
 
-*Output*: TBA
+*Output*: 
+- "Z_trends_per_region.RDS" (R-object with a hierarchical regression models of *Z* versus time for dated GLOFs in the six regions between 1900 and 2021)
+- "elev_trend.pdf" / "elev_trend.png" (Plot of the change in GLOF source elevation for six regions between 1900 and 2021, including the posterior regression slope)
+- "Lake_GLOF_elevation.pdf" / "Lake_GLOF_elevation.png" (Plot of the elevation distribution of historic burst ice-dammed lakes and present-day ice-dammed lakes for six regions between 1900 and 2021)
 
 ---
 
