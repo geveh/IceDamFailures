@@ -152,7 +152,7 @@ GLOF peak discharge Q<sub>p</sub>
 
 ## Input data
 
-Please visit repository on Zenodo (link **to appear here soon**) to obtain the input files.
+Please visit repository on Zenodo (***link will appear here soon***) to obtain the input files.
 
 
 ## References
