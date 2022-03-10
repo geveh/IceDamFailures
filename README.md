@@ -9,8 +9,8 @@
 - [03_local_trends_in_V0_and_Qp.R](#03_local_trends_in_v0_and_qpr)
 - [04_trends_in_doy.R](#04_trends_in_doyr)
 - [05_glacier_volumes_and_ice_loss.R](#05_glacier_volumes_and_ice_lossr)
-- [06_trends_in_Z.R](06_trends_in_zr)
-- [07_magnitudes_vs_elev_change.R](07_magnitudes_vs_elev_changer)
+- [06_trends_in_Z.R](#06_trends_in_zr)
+- [07_magnitudes_vs_elev_change.R](#07_magnitudes_vs_elev_changer)
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.0.0, and called within
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
