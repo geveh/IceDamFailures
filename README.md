@@ -8,8 +8,8 @@
 - 02_quantile_regression.R
 - 03_local_trends_in_V0_and_Qp.R
 - 04_trends_in_doy.R
-- 05_XXX.R
-- 06_XXX.R
+- 05_glacier_volumes_and_ice_loss.R
+- 06_trends_in_Z.R
 - 07_magnitudes_vs_elev_change.R
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.0.0, and called within
@@ -19,7 +19,8 @@ Please install both **R and RStudio** on your machine to successfully run the co
 The R codes depend on a number of packages, listed at the beginning of all scripts. Please install those packages before running the scripts. 
 The comments within the scripts provide further details on model dependencies and usage of functions. 
 
-Each script will call one or more input data object(s), which will be made available **via Zenodo soon**. 
+Each script will call one or more input data object(s), which will be made available ***via Zenodo soon***.  
+We also use freely available digital elevation models (DEMs) and glaciological data (glacier outlines, estimates of ice thickness and mass loss). Please download the data from the web sources provided in the scripts.  
 Please put all input files into the same folder. The scripts can be executed one after the other, with the user generating output that is used as input for the next script.
 The scripts (and parts thereof) can also be run independent of each other using the input files from Zenodo.
 Each script will produce output in form of a figure (displayed in the associate manuscript and supplementary figures) or R-objects.
