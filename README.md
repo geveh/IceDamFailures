@@ -12,7 +12,7 @@
 - [06_trends_in_Z.R](#06_trends_in_zr)
 - [07_magnitudes_vs_elev_change.R](#07_magnitudes_vs_elev_changer)
 
-The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.0.0, and called within
+The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.2.0, and called within
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
 Please install both **R and RStudio** on your machine to successfully run the codes and produce figures and R data objects.
 
