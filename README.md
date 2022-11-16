@@ -68,7 +68,7 @@ from ice-dam failures in six mountain ranges.**
 
 ### 03_trends_in_doy.R
 
-**Script to estimate trends in the annual timing (i.e. day in a given year) of ice-dam failures on regional and local scale.**
+**Script to estimate trends in the annual timing (*doy*, i.e. day in a given year) of ice-dam failures on regional and local scale.**
 
 *Mandatory input data*: 
 - "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
@@ -99,7 +99,7 @@ from ice-dam failures in six mountain ranges.**
 
 ### 05_trends_in_Z.R
 
-**Script to estimate regional trends in the source elevation (*Z*) of ice-dammed failures**
+**Script to estimate regional trends in the source elevation (*Z*) of ice-dammed failures.**
 
 *Mandatory input data*: 
 - Digital Elevation models from ALOS World 3D - 30m (AW3D30)
