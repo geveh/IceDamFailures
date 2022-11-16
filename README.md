@@ -5,7 +5,7 @@
 **This repository contains six scripts to estimate trends in the volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-) level. In addition, we investigate the consequences of melting glacier dams on the magnitudes of GLOFs.**
 
 - [01_preprocessing.R](#01_lake_area_volumer)
-- [02_trends_in_Qp_and_V0.R](#02_quantile_regressionr)
+- [02_trends_in_Qp_and_V0.R](#02_trends_in_qp_and_v0r)
 - [03_trends_in_doy.R](#03_trends_in_doyr)
 - [04_glacier_volumes_and_ice_loss.R](#04_glacier_volumes_and_ice_lossr)
 - [05_trends_in_Z.R](#05_trends_in_zr)
