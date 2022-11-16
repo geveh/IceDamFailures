@@ -10,6 +10,7 @@
 - [04_glacier_volumes_and_ice_loss.R](#04_glacier_volumes_and_ice_lossr)
 - [05_trends_in_Z.R](#05_trends_in_zr)
 - [06_magnitudes_vs_elev_change.R](#06_magnitudes_vs_elev_changer)
+- [summary_stats_veh_revision.py](#summary_stats_veh_revisionpy)
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.2.0, and called within
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
@@ -79,6 +80,7 @@ from ice-dam failures in six mountain ranges.**
 - "doy_trends_per_glacier.RDS"  (R-object with regression models of *doy* versus time for lakes with repeat GLOFs)
 - "doy_local.pdf" (Plot of local changes in *doy* versus time)
 - "post_trend_doy_per_lake.pdf"  (Plot of local  posterior differences in *doy* for each lake)
+
 ---
 
 ### 04_glacier_volumes_and_ice_loss.R
@@ -134,7 +136,13 @@ from ice-dam failures in six mountain ranges.**
 - "map_and_trends.pdf" (Map of lakes with repeat GLOFs between 2000 and 2019; local trends of V<sub>0</sub> and Q<sub>p</sub> with cumulative changes in glacier dam elevation)
 - "dam_thinning_rats.shp" (ESRI shapefile showing mean annual elevation change of glacier dams with repeat outbursts between 2000 and 2019)
 - "elev_change_per_glacier.pdf" / "elev_change_per_glacier.png" (Plot of cumulative elevation change for each glacier that produced repeated GLOFs between 2000 and 2019)
+
 ---
+
+### summary_stats_veh_revision.py
+
+** Script by Romain Hugonnet to obtain elevation changes from glacier dams. Please contact R. Hugonnet, if you have further questions.**
+
 
 ## Input data
 
