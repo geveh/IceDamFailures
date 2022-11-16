@@ -141,7 +141,7 @@ from ice-dam failures in six mountain ranges.**
 
 ### summary_stats_veh_revision.py
 
-** Script by Romain Hugonnet to obtain elevation changes from glacier dams. Please contact R. Hugonnet, if you have further questions.**
+**Script by Romain Hugonnet to obtain elevation changes from glacier dams. Please contact R. Hugonnet, if you have further questions.**
 
 
 ## Input data
