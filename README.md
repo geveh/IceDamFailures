@@ -35,7 +35,7 @@ Each script will produce output in form of a figure (displayed in the associate 
 - CRU TS V4.05 temperature data
 
 
-*Output*: 
+*Main outputs*: 
 - "all_glofs_tibble.RDS" (R-object of all reported GLOFs in the global GLOF database)
 - "all_glofs_V0_tibble.RDS" (R-object of all GLOFs that have reported values of *V*<sub>0</sub>)
 - "all_glofs_qp_tibble.RDS" (R-object of all GLOFs that have reported values of *Q*<sub>p</sub>)
@@ -44,48 +44,29 @@ Each script will produce output in form of a figure (displayed in the associate 
 
 ---
 
-### 02_quantile_regression.R
+### 02_trends_in_Qp_and_V0.R
 
 **Script to fit quantile regression models (50th and 90th percentile) of peak discharges *Q*<sub>p</sub> and volumes *V*<sub>0</sub> versus time 
 from ice-dam failures in six mountain ranges.**
 
 *Mandatory input data*: 
-- "Global_GLOF_database_2021_12_08.ods" (table with all reported GLOFs according to the Global GLOF database)
+- "all_glofs_V0_tibble.RDS" (R-object of all GLOFs that have reported values of *V*<sub>0</sub>)
+- "all_glofs_qp_tibble.RDS" (R-object of all GLOFs that have reported values of *Q*<sub>p</sub>)
 
-*Output*: 
-- "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
-- "qp_regional_quantreg_fits.RDS" (R-object with a quantile regression model of V<sub>0</sub> and Q<sub>p</sub> versus time for the 50th and 90th percentile for each region)
-- "qp_regional_quantreg_posteriors.RDS" (R-object of the posterior predictive distribution of V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles for each year in the period 1900-2021)
-- "qp_regional_quantreg_trends.RDS" (R-object of posterior trends in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
-- "qp_regional_medline.RDS" (R-object of median temporal change in V<sub>0</sub> and Q<sub>p</sub> for each region and both percentiles)
+*Main outputs*: 
+- "qp_models.RDS" (R-object with regional quantile regression models of *Q*<sub>p</sub> versus time for the 50th and 90th for 4 time periods)
+- "V0_models.RDS" (R-object with regional quantile regression models of *V*<sub>0</sub> versus time for the 50th and 90th for 4 time periods)
+- "fig2.pdf" (PDF figure containing the regional posterior slopes for *Q*<sub>p</sub> and *V*<sub>0</sub> for two different time periods)
+- "all_pooled_mods.pdf" (PDF figure containing the pooled trendes of *Q*<sub>p</sub> and *V*<sub>0</sub> for two different time periods)
+- "qp_model_median_local.RDS"  (R-object with local quantile regression models of median *Q*<sub>p</sub> versus time)
+- "Qp_local.pdf" (PDF figure showing temporal trends of median *Q*<sub>p</sub> for individual glacier lakes) 
+- "V0_model_median_local.RDS"  (R-object with regional quantile regression models of median *V*<sub>0</sub> versus time)
+- "V0_local.pdf" (PDF figure showing temporal trends of median *V*<sub>0</sub> for individual glacier lakes) 
+- "local_posterior_trends.pdf" (PDF figure showing posterior distributions of the trends in local *Q*<sub>p</sub> and V*<sub>0</sub>)
+
 ---
 
-### 03_local_trends_in_V0_and_Qp.R
-
-**Script to estimate trends in V<sub>0</sub> and Q<sub>p</sub> for individual ice-dammed lakes with repeat outburst.** 
-
-*Mandatory input data*: 
-- "all_glofs_tibble.RDS" (R-object with a preprocessed table of all reported GLOFs)
-- "va_model.RDS" (R-object of the fitted volume-area-relationship. Will be used to make new predictions of lake volume from mapped lake areas)
-
-*Output*: 
-
-GLOF volume V<sub>0</sub>
-- "all_glofs_V0_tibble.RDS" (Table of lakes with repeat GLOFs and reported V<sub>0</sub>)
-- "local_V0_model.RDS" (Hierarchical regression model of V<sub>0</sub> versus time for individual glacier lakes)
-- "regression_V0_per_lake.pdf" / "regression_V0_per_lake.png" (Plot of the posterior trends in V<sub>0</sub> for each lake)
-- "post_trend_V0_per_lake.pdf" / "post_trend_V0_per_lake.png" (Plot of the posterior regression slope of V<sub>0</sub> versus time)
-- "all_glofs_V0_tibble.RDS" (Table of lakes with repeat GLOFs and reported V<sub>0</sub>)
-
-GLOF peak discharge Q<sub>p</sub>
-- "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
-- "local_qp_model.RDS" (Hierarchical regression model of Q<sub>0</sub> versus time for individual glacier lakes)
-- "regression_Qp_per_lake.pdf" / "regression_Qp_per_lake.png" (Plot of the posterior trends in Q<sub>p</sub> for each lake)
-- "post_trend_Qp_per_lake.pdf" / "post_trend_Qp_per_lake.png" (Plot of the posterior regression slope of Q<sub>p</sub> versus time)
-- "all_glofs_qp_tibble.RDS" (Table of lakes with repeat GLOFs and reported Q<sub>p</sub>)
----
-
-### 04_trends_in_doy.R
+### 03_trends_in_doy.R
 
 **Script to estimate trends in the annual timing (i.e. day in a given year) of ice-dam failures on regional and local scale.**
 
@@ -94,13 +75,13 @@ GLOF peak discharge Q<sub>p</sub>
 
 *Output*: 
 - "doy_trends_per_region.RDS" (R-object with regression models of *doy* versus time for all dated GLOFs in the six regions)
-- "doy_change.pdf" / "doy_change.png" (Plot of the temporal trends in *doy* for each region, including the posterior differences in *doy* between 2021 and 1900)
+- "doy_change.pdf" (Plot of the temporal trends in *doy* for each region, including the posterior differences in *doy* between 2021 and 1900)
 - "doy_trends_per_glacier.RDS"  (R-object with regression models of *doy* versus time for lakes with repeat GLOFs)
-- "regression_doy_per_lake.pdf" / "regression_doy_per_lake.png" (Plot of local changes in *doy* versus time)
-- "post_trend_doy_per_lake.pdf" / "post_trend_doy_per_lake.png" (Plot of local  posterior differences in *doy* for each lake)
+- "doy_local.pdf" (Plot of local changes in *doy* versus time)
+- "post_trend_doy_per_lake.pdf"  (Plot of local  posterior differences in *doy* for each lake)
 ---
 
-### 05_glacier_volumes_and_ice_loss.R
+### 04_glacier_volumes_and_ice_loss.R
 
 **Script to obtain the total volumes of glaciers and their volume loss between 2000 and 2019 in 100-m elevation bins.**
 
@@ -116,23 +97,25 @@ GLOF peak discharge Q<sub>p</sub>
 
 ---
 
-### 06_trends_in_Z.R
+### 05_trends_in_Z.R
 
 **Script to estimate regional trends in the source elevation (*Z*) of ice-dammed failures**
 
 *Mandatory input data*: 
 - Digital Elevation models from ALOS World 3D - 30m (AW3D30)
-- Folder "GDL_database" (Regional inventories of ice-dammed lakes in ESRI shapefile format)
+- Files from the "GDL_database" (We created a merged lake inventory in ESRI shapefile format from regional lake databases. This lake database is available upon request)   
 - "Regional_glacier_and_melt_volumes.rds" (R-object containing the total volume of glacier volume and volume change between 2000 and 2019 in 100-m elevation bins)
 
-*Output*: 
+*Major outputs*: 
+- "gdl_database_centroid.RDS" (R-object of glacier lake centroids in the six study regions)
+- "glofs_ice_with_z.RDS" (R-object of first reported GLOF from a given lake and its elevation)
 - "Z_trends_per_region.RDS" (R-object with a hierarchical regression models of *Z* versus time for dated GLOFs in the six regions between 1900 and 2021)
-- "elev_trend.pdf" / "elev_trend.png" (Plot of the change in GLOF source elevation for six regions between 1900 and 2021, including the posterior regression slope)
+- "elev_trend.pdf" (Plot of the change in GLOF source elevation for six regions between 1900 and 2021, including the posterior regression slope)
 - "Lake_GLOF_elevation.pdf" / "Lake_GLOF_elevation.png" (Plot of the elevation distribution of historic burst ice-dammed lakes and present-day ice-dammed lakes for six regions between 1900 and 2021)
 
 ---
 
-### 07_magnitudes_vs_elev_change.R
+### 06_magnitudes_vs_elev_change.R
 
 **Script to estimate local trends of  V<sub>0</sub> and  Q<sub>p</sub> with elevation change of the glacier dam.**
 
@@ -155,12 +138,12 @@ GLOF peak discharge Q<sub>p</sub>
 
 ## Input data
 
-Please visit repository on Zenodo (***link will appear here soon***) to obtain the input files.
+Please visit repository on Zenodo to obtain the input files.
 
 
 ## References
 
-Georg Veh, Natalie Lützow, Jenny Tamm, Romain Hugonnet, Marten Geertsema, John J Clague, and Oliver Korup: *Smaller and earlier outbursts from ice-dammed lakes with ongoing glacier decay* (submitted).
+Georg Veh, Natalie Lützow, Jenny Tamm, Lisa V. Luna, Romain Hugonnet, Kristin Vogel, Marten Geertsema, John J Clague, and Oliver Korup: *Less extreme and earlier outbursts from ice-dammed lakes since 1900*.
 
 ## See also
 
