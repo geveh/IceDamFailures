@@ -1,16 +1,15 @@
-# Changes in ice-dam failures with ongoing glacier decay
+# Code for *"Less extreme and earlier outbursts of ice-dammed lakes since 1900"*
 
 ## Overview
 
-**This repository contains seven scripts to identify trends in the volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-) level. Furthermore, we investigate the consequences of melting glacier dams on the magnitudes of GLOFs.**
+**This repository contains six scripts to estimate trends in the volume (*V*<sub>0</sub>), peak discharge (*Q*<sub>p</sub>), timing (day of year *doy*), and source elevation (*Z*) of ice-dam failures on regional and local (i.e. lake-) level. In addition, we investigate the consequences of melting glacier dams on the magnitudes of GLOFs.**
 
-- [01_lake_area_volume.R](#01_lake_area_volumer)
-- [02_quantile_regression.R](#02_quantile_regressionr)
-- [03_local_trends_in_V0_and_Qp.R](#03_local_trends_in_v0_and_qpr)
-- [04_trends_in_doy.R](#04_trends_in_doyr)
-- [05_glacier_volumes_and_ice_loss.R](#05_glacier_volumes_and_ice_lossr)
-- [06_trends_in_Z.R](#06_trends_in_zr)
-- [07_magnitudes_vs_elev_change.R](#07_magnitudes_vs_elev_changer)
+- [01_preprocessing.R](#01_lake_area_volumer)
+- [02_trends_in_Qp_and_V0.R](#02_quantile_regressionr)
+- [03_trends_in_doy.R](#03_trends_in_doyr)
+- [04_glacier_volumes_and_ice_loss.R](#04_glacier_volumes_and_ice_lossr)
+- [05_trends_in_Z.R](#05_trends_in_zr)
+- [06_magnitudes_vs_elev_change.R](#06_magnitudes_vs_elev_changer)
 
 The codes are written in the statistical programming language **R** (https://www.r-project.org/), Version 4.2.0, and called within
 the Graphical User Interface **RStudio** (https://rstudio.com) under a Microsoft Windows 10 operating system. 
@@ -19,26 +18,30 @@ Please install both **R and RStudio** on your machine to successfully run the co
 The R codes depend on a number of packages, listed at the beginning of all scripts. Please install those packages before running the scripts. 
 The comments within the scripts provide further details on model dependencies and usage of functions. 
 
-Each script will call one or more input data object(s), which will be made available ***via Zenodo soon***.  
-We also use freely available digital elevation models (DEMs) and glaciological data (glacier outlines, estimates of ice thickness and mass loss). Please download the data from the web sources provided in the scripts.  
-Please put all input files into the same folder. The scripts can be executed one after the other, with the user generating output that is used as input for the next script.
-The scripts (and parts thereof) can also be run independent of each other using the input files from Zenodo.
-Each script will produce output in form of a figure (displayed in the associate manuscript and supplementary figures) or R-objects.
+Each script will call one or more input data object(s), which are available via ***Zenodo***.  
+We also use freely available digital elevation models (DEMs), glaciological data (glacier outlines, estimates of ice thickness and mass loss), and lake outlines. Please download the data from the web sources provided in the scripts.  
+Please put all input files into the same folder, and change the folder used in the script to your folder structure. The scripts can be executed one after the other, with the user generating output that is used as input for the next script.
+The scripts (and parts thereof) can also be run independent of each other using the input files (in most cases *.RDS* files) from Zenodo.
+Each script will produce output in form of a figure (displayed in the associate manuscript and Extended Data figures) or R-objects.
 
 ## Scripts
 
-### 01_lake_area_volume.R
+### 01_preprocessing.R
 
-**Script to predict glacier lake volume *V* from glacier lake area *A*. We use a Bayesian piece-wise
-regression model that objectively learns the location of a breakpoint in the empirical relationship between lake volume and lake area.**
+**Script to preprocess a raw OpenOffice table of reported glacier lake outburst floods.**
 
 *Mandatory input data*: 
-- "Global_GLOF_database_2021_12_08.ods" (table with all reported GLOFs according to the Global GLOF database)
-- "lake_area_volume_compiliaton.xlsx" (table with previously reported data pairs of volume and area of glacier lakes)
+- "Global_GLOF_database_2022_05_30.ods" (table with all reported GLOFs. Compiliation as of May 30, 2022)
+- CRU TS V4.05 temperature data
+
 
 *Output*: 
-- "va_breakpoint.pdf" / "va_breakpoint.png" (Plot of the piece-wise *V-A* regression model)
-- "va_model.RDS" (R-object of the fitted volume-area-relationship using the package mcp)
+- "all_glofs_tibble.RDS" (R-object of all reported GLOFs in the global GLOF database)
+- "all_glofs_V0_tibble.RDS" (R-object of all GLOFs that have reported values of *V*<sub>0</sub>)
+- "all_glofs_qp_tibble.RDS" (R-object of all GLOFs that have reported values of *Q*<sub>p</sub>)
+- "glof_reporting.pdf" (Multi-panel histogram of reported values of all reported GLOFs, reported values of Qp, and reported values of V0 from ice-dammed lakes) 
+- "temp_doy_histogram.pdf" (histogram that both shows the number of reported GLOFs and the mean air temperature in a given month)
+
 ---
 
 ### 02_quantile_regression.R
