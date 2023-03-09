@@ -141,17 +141,17 @@ from ice-dam failures in six mountain ranges.**
 
 ### summary_stats_veh_revision.py
 
-**Script by Romain Hugonnet to obtain elevation changes from glacier dams. Please contact R. Hugonnet, if you have further questions.**
+**Script by Romain Hugonnet to obtain elevation changes from glacier dams. Please contact Romain Hugonnet, if you have further questions.**
 
 
 ## Input data
 
-Please visit repository on Zenodo to obtain the input files.
+Please visit the repository on Zenodo to obtain the input files.
 
 
 ## References
 
-Georg Veh, Natalie Lützow, Jenny Tamm, Lisa V. Luna, Romain Hugonnet, Kristin Vogel, Marten Geertsema, John J Clague, and Oliver Korup: *Less extreme and earlier outbursts from ice-dammed lakes since 1900*.
+Georg Veh, Natalie Lützow, Jenny Tamm, Lisa V. Luna, Romain Hugonnet, Kristin Vogel, Marten Geertsema, John J Clague, and Oliver Korup: *Less extreme and earlier outbursts from ice-dammed lakes since 1900*. Nature, 614, 701–707, https://doi.org/10.1038/s41586-022-05642-9.
 
 ## See also
 
